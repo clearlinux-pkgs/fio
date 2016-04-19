@@ -1,0 +1,10 @@
+--- fio-fio-2.8/configure~	2016-03-15 16:10:37.000000000 +0000
++++ fio-fio-2.8/configure	2016-04-19 03:02:25.927842858 +0000
+@@ -183,7 +183,6 @@
+   *)
+   echo "Bad option $opt"
+   show_help="yes"
+-  exit_val=1
+   esac
+ done
+ 
