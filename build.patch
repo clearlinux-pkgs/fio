@@ -8,3 +8,14 @@
    esac
  done
  
+--- fio-fio-2.10/configure~	2016-05-21 15:00:54.000000000 +0000
++++ fio-fio-2.10/configure	2016-05-22 15:34:37.657081649 +0000
+@@ -137,7 +137,7 @@
+ libhdfs="no"
+ pmemblk="no"
+ disable_lex=""
+-prefix=/usr/local
++prefix=/usr
+ 
+ # parse options
+ for opt do

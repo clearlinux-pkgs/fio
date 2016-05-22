@@ -4,12 +4,14 @@
 #
 Name     : fio
 Version  : fio
-Release  : 5
+Release  : 6
 URL      : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
+Requires: fio-bin
+Requires: fio-data
 Patch1: build.patch
 
 %description
@@ -21,6 +23,23 @@ number of global parameters, each inherited by the thread unless
 otherwise parameters given to them overriding that setting is given.
 The typical use of fio is to write a job file matching the io load
 one wants to simulate.
+
+%package bin
+Summary: bin components for the fio package.
+Group: Binaries
+Requires: fio-data
+
+%description bin
+bin components for the fio package.
+
+
+%package data
+Summary: data components for the fio package.
+Group: Data
+
+%description data
+data components for the fio package.
+
 
 %prep
 %setup -q -n fio-fio-2.10
@@ -36,18 +55,24 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-/usr/local/bin/fio
-/usr/local/bin/fio-btrace2fio
-/usr/local/bin/fio-dedupe
-/usr/local/bin/fio-genzipf
-/usr/local/bin/fio-verify-state
-/usr/local/bin/fio2gnuplot
-/usr/local/bin/fio_generate_plots
-/usr/local/bin/fiologparser.py
-/usr/local/bin/genfio
-/usr/local/man/man1/fio.1
-/usr/local/man/man1/fio2gnuplot.1
-/usr/local/man/man1/fio_generate_plots.1
-/usr/local/share/fio/graph2D.gpm
-/usr/local/share/fio/graph3D.gpm
-/usr/local/share/fio/math.gpm
+/usr/man/man1/fio.1
+/usr/man/man1/fio2gnuplot.1
+/usr/man/man1/fio_generate_plots.1
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/fio
+/usr/bin/fio-btrace2fio
+/usr/bin/fio-dedupe
+/usr/bin/fio-genzipf
+/usr/bin/fio-verify-state
+/usr/bin/fio2gnuplot
+/usr/bin/fio_generate_plots
+/usr/bin/fiologparser.py
+/usr/bin/genfio
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/fio/graph2D.gpm
+/usr/share/fio/graph3D.gpm
+/usr/share/fio/math.gpm
