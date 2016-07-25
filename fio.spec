@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : fio
-Release  : 6
+Release  : 7
 URL      : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Summary  : No detailed summary available
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: fio-bin
 Requires: fio-data
+Requires: fio-doc
 Patch1: build.patch
 
 %description
@@ -41,11 +42,20 @@ Group: Data
 data components for the fio package.
 
 
+%package doc
+Summary: doc components for the fio package.
+Group: Documentation
+
+%description doc
+doc components for the fio package.
+
+
 %prep
 %setup -q -n fio-fio-2.10
 %patch1 -p1
 
 %build
+export LANG=C
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -55,9 +65,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-/usr/man/man1/fio.1
-/usr/man/man1/fio2gnuplot.1
-/usr/man/man1/fio_generate_plots.1
 
 %files bin
 %defattr(-,root,root,-)
@@ -76,3 +83,7 @@ rm -rf %{buildroot}
 /usr/share/fio/graph2D.gpm
 /usr/share/fio/graph3D.gpm
 /usr/share/fio/math.gpm
+
+%files doc
+%defattr(-,root,root,-)
+%doc /usr/share/man/man1/*
