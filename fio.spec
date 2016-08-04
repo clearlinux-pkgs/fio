@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : fio
-Release  : 7
+Release  : 8
 URL      : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Summary  : No detailed summary available
@@ -13,6 +13,7 @@ License  : GPL-2.0
 Requires: fio-bin
 Requires: fio-data
 Requires: fio-doc
+BuildRequires : libaio-dev
 Patch1: build.patch
 
 %description
