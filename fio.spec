@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 2.10
-Release  : 9
+Release  : 10
 URL      : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.10.tar.gz
 Summary  : No detailed summary available
@@ -57,12 +57,12 @@ doc components for the fio package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1485974476
+export SOURCE_DATE_EPOCH=1485974620
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1485974476
+export SOURCE_DATE_EPOCH=1485974620
 rm -rf %{buildroot}
 %make_install
 
