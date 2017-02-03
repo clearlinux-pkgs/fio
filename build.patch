@@ -1,9 +1,9 @@
 --- fio-fio-2.10/configure.orig	2016-07-25 11:29:22.300596811 -0700
 +++ fio-fio-2.10/configure	2016-07-25 11:29:46.268624838 -0700
 @@ -137,7 +137,7 @@
- libhdfs="no"
- pmemblk="no"
+ devdax="no"
  disable_lex=""
+ disable_pmem="no"
 -prefix=/usr/local
 +prefix=/usr
  
