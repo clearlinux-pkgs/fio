@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 2.19
-Release  : 15
+Release  : 16
 URL      : https://github.com/axboe/fio/archive/fio-2.19.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.19.tar.gz
 Summary  : No detailed summary available
