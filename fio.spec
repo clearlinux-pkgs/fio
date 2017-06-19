@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 2.21
-Release  : 19
+Release  : 20
 URL      : https://github.com/axboe/fio/archive/fio-2.21.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.21.tar.gz
 Summary  : No detailed summary available
@@ -13,6 +13,8 @@ License  : GPL-2.0
 Requires: fio-bin
 Requires: fio-data
 Requires: fio-doc
+BuildRequires : bison
+BuildRequires : flex
 BuildRequires : libaio-dev
 BuildRequires : numactl-dev
 BuildRequires : zlib-dev
@@ -62,12 +64,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1497839808
+export SOURCE_DATE_EPOCH=1497839919
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto -fno-semantic-interposition "
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1497839808
+export SOURCE_DATE_EPOCH=1497839919
 rm -rf %{buildroot}
 %make_install
 

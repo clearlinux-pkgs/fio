@@ -3,3 +3,5 @@
 libaio-dev
 zlib-dev
 numactl-dev
+bison
+flex
