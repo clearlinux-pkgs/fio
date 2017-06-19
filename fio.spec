@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 2.21
-Release  : 18
+Release  : 19
 URL      : https://github.com/axboe/fio/archive/fio-2.21.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-2.21.tar.gz
 Summary  : No detailed summary available
@@ -14,6 +14,8 @@ Requires: fio-bin
 Requires: fio-data
 Requires: fio-doc
 BuildRequires : libaio-dev
+BuildRequires : numactl-dev
+BuildRequires : zlib-dev
 Patch1: build.patch
 
 %description
@@ -60,12 +62,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1497626716
+export SOURCE_DATE_EPOCH=1497839808
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1497626716
+export SOURCE_DATE_EPOCH=1497839808
 rm -rf %{buildroot}
 %make_install
 
