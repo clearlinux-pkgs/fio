@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.2
-Release  : 23
+Release  : 24
 URL      : https://github.com/axboe/fio/archive/fio-3.2.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.2.tar.gz
 Summary  : No detailed summary available
@@ -64,7 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1510010012
+export SOURCE_DATE_EPOCH=1513088048
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -73,10 +73,10 @@ export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1510010012
+export SOURCE_DATE_EPOCH=1513088048
 rm -rf %{buildroot}
 %make_install
 
