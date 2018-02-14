@@ -1,5 +1,5 @@
 PKG_NAME := fio
-URL = https://github.com/axboe/fio/archive/fio-3.3.tar.gz
-
+URL = https://github.com/axboe/fio/archive/fio-3.4.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
