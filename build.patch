@@ -1,15 +1,16 @@
---- fio-fio-2.10/configure.orig	2016-07-25 11:29:22.300596811 -0700
-+++ fio-fio-2.10/configure	2016-07-25 11:29:46.268624838 -0700
-@@ -137,7 +137,7 @@
- devdax="no"
- disable_lex=""
+diff -ru fio-fio-3.6/configure fio-fio-3.6~/configure
+--- fio-fio-3.6/configure	2018-04-16 08:22:37.000000000 -0700
++++ fio-fio-3.6~/configure	2018-04-24 10:02:08.445532471 -0700
+@@ -147,7 +147,7 @@
  disable_pmem="no"
+ disable_native="no"
+ march_set="no"
 -prefix=/usr/local
 +prefix=/usr
  
  # parse options
  for opt do
-@@ -186,7 +186,6 @@
+@@ -205,7 +205,6 @@
    *)
    echo "Bad option $opt"
    show_help="yes"
@@ -17,9 +18,10 @@
    esac
  done
  
---- fio-fio-2.10/Makefile.orig	2016-07-25 11:29:27.604602898 -0700
-+++ fio-fio-2.10/Makefile	2016-07-25 11:29:55.708636236 -0700
-@@ -292,7 +292,7 @@
+diff -ru fio-fio-3.6/Makefile fio-fio-3.6~/Makefile
+--- fio-fio-3.6/Makefile	2018-04-16 08:22:37.000000000 -0700
++++ fio-fio-3.6~/Makefile	2018-04-24 10:02:47.495531402 -0700
+@@ -316,7 +316,7 @@
  mandir = /usr/share/man
  sharedir = /usr/share/fio
  else
