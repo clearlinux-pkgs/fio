@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.6
-Release  : 29
+Release  : 30
 URL      : https://github.com/axboe/fio/archive/fio-3.6.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.6.tar.gz
 Summary  : No detailed summary available
