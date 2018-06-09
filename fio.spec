@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.7
-Release  : 31
+Release  : 32
 URL      : https://github.com/axboe/fio/archive/fio-3.7.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.7.tar.gz
 Summary  : No detailed summary available
@@ -12,7 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: fio-bin
 Requires: fio-data
-Requires: fio-doc
+Requires: fio-man
 BuildRequires : bison
 BuildRequires : flex
 BuildRequires : libaio-dev
@@ -34,6 +34,7 @@ tailored test case again and again.
 Summary: bin components for the fio package.
 Group: Binaries
 Requires: fio-data
+Requires: fio-man
 
 %description bin
 bin components for the fio package.
@@ -47,12 +48,20 @@ Group: Data
 data components for the fio package.
 
 
-%package doc
-Summary: doc components for the fio package.
-Group: Documentation
+%package extras
+Summary: extras components for the fio package.
+Group: Default
 
-%description doc
-doc components for the fio package.
+%description extras
+extras components for the fio package.
+
+
+%package man
+Summary: man components for the fio package.
+Group: Default
+
+%description man
+man components for the fio package.
 
 
 %prep
@@ -64,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528170247
+export SOURCE_DATE_EPOCH=1528556036
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -76,7 +85,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -f
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1528170247
+export SOURCE_DATE_EPOCH=1528556036
 rm -rf %{buildroot}
 %make_install
 
@@ -85,6 +94,8 @@ rm -rf %{buildroot}
 
 %files bin
 %defattr(-,root,root,-)
+%exclude /usr/bin/fiologparser.py
+%exclude /usr/bin/fiologparser_hist.py
 /usr/bin/fio
 /usr/bin/fio-btrace2fio
 /usr/bin/fio-dedupe
@@ -93,8 +104,6 @@ rm -rf %{buildroot}
 /usr/bin/fio2gnuplot
 /usr/bin/fio_generate_plots
 /usr/bin/fio_jsonplus_clat2csv
-/usr/bin/fiologparser.py
-/usr/bin/fiologparser_hist.py
 /usr/bin/genfio
 
 %files data
@@ -103,6 +112,14 @@ rm -rf %{buildroot}
 /usr/share/fio/graph3D.gpm
 /usr/share/fio/math.gpm
 
-%files doc
+%files extras
 %defattr(-,root,root,-)
-%doc /usr/share/man/man1/*
+/usr/bin/fiologparser.py
+/usr/bin/fiologparser_hist.py
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/fio.1
+/usr/share/man/man1/fio2gnuplot.1
+/usr/share/man/man1/fio_generate_plots.1
+/usr/share/man/man1/fiologparser_hist.py.1
