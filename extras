@@ -1,2 +1,4 @@
 /usr/bin/fiologparser.py
 /usr/bin/fiologparser_hist.py
+/usr/bin/fio_jsonplus_clat2csv
+/usr/bin/fio2gnuplot

@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.7
-Release  : 32
+Release  : 33
 URL      : https://github.com/axboe/fio/archive/fio-3.7.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.7.tar.gz
 Summary  : No detailed summary available
@@ -73,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528556036
+export SOURCE_DATE_EPOCH=1528669211
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -85,7 +85,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -f
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1528556036
+export SOURCE_DATE_EPOCH=1528669211
 rm -rf %{buildroot}
 %make_install
 
@@ -94,6 +94,8 @@ rm -rf %{buildroot}
 
 %files bin
 %defattr(-,root,root,-)
+%exclude /usr/bin/fio2gnuplot
+%exclude /usr/bin/fio_jsonplus_clat2csv
 %exclude /usr/bin/fiologparser.py
 %exclude /usr/bin/fiologparser_hist.py
 /usr/bin/fio
@@ -101,9 +103,7 @@ rm -rf %{buildroot}
 /usr/bin/fio-dedupe
 /usr/bin/fio-genzipf
 /usr/bin/fio-verify-state
-/usr/bin/fio2gnuplot
 /usr/bin/fio_generate_plots
-/usr/bin/fio_jsonplus_clat2csv
 /usr/bin/genfio
 
 %files data
@@ -114,6 +114,8 @@ rm -rf %{buildroot}
 
 %files extras
 %defattr(-,root,root,-)
+/usr/bin/fio2gnuplot
+/usr/bin/fio_jsonplus_clat2csv
 /usr/bin/fiologparser.py
 /usr/bin/fiologparser_hist.py
 
