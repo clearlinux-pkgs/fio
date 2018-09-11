@@ -1,2 +1,2 @@
 ;
-./configure --disable-native
+./configure --disable-native --extra-cflags="$CFLAGS"
