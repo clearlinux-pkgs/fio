@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.9
-Release  : 35
+Release  : 36
 URL      : https://github.com/axboe/fio/archive/fio-3.9.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.9.tar.gz
 Summary  : No detailed summary available
@@ -83,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536260138
+export SOURCE_DATE_EPOCH=1536645658
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -91,11 +91,12 @@ export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-m
 export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-%configure --disable-static
-make  %{?_smp_mflags}
+%configure --disable-static ; \
+./configure --disable-native
+make  %{?_smp_mflags} V=1
 
 %install
-export SOURCE_DATE_EPOCH=1536260138
+export SOURCE_DATE_EPOCH=1536645658
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/fio
 cp COPYING %{buildroot}/usr/share/doc/fio/COPYING
@@ -107,10 +108,6 @@ cp MORAL-LICENSE %{buildroot}/usr/share/doc/fio/MORAL-LICENSE
 
 %files bin
 %defattr(-,root,root,-)
-%exclude /usr/bin/fio2gnuplot
-%exclude /usr/bin/fio_jsonplus_clat2csv
-%exclude /usr/bin/fiologparser.py
-%exclude /usr/bin/fiologparser_hist.py
 /usr/bin/fio
 /usr/bin/fio-btrace2fio
 /usr/bin/fio-dedupe
