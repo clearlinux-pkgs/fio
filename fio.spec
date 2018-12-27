@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.12
-Release  : 39
+Release  : 40
 URL      : https://github.com/axboe/fio/archive/fio-3.12.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.12.tar.gz
 Summary  : No detailed summary available
