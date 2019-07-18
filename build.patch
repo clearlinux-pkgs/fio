@@ -1,16 +1,16 @@
-diff -ru fio-fio-3.6/configure fio-fio-3.6~/configure
---- fio-fio-3.6/configure	2018-04-16 08:22:37.000000000 -0700
-+++ fio-fio-3.6~/configure	2018-04-24 10:02:08.445532471 -0700
-@@ -147,7 +147,7 @@
- disable_pmem="no"
+diff -ru fio-fio-3.15/configure fio-fio-3.15~/configure
+--- fio-fio-3.15/configure	2019-07-12 09:40:36.000000000 -0700
++++ fio-fio-3.15~/configure	2019-07-17 18:03:44.358103477 -0700
+@@ -149,7 +149,7 @@
  disable_native="no"
  march_set="no"
+ libiscsi="no"
 -prefix=/usr/local
 +prefix=/usr
  
  # parse options
  for opt do
-@@ -205,7 +205,6 @@
+@@ -215,7 +215,6 @@
    *)
    echo "Bad option $opt"
    show_help="yes"
@@ -18,10 +18,10 @@ diff -ru fio-fio-3.6/configure fio-fio-3.6~/configure
    esac
  done
  
-diff -ru fio-fio-3.6/Makefile fio-fio-3.6~/Makefile
---- fio-fio-3.6/Makefile	2018-04-16 08:22:37.000000000 -0700
-+++ fio-fio-3.6~/Makefile	2018-04-24 10:02:47.495531402 -0700
-@@ -316,7 +316,7 @@
+diff -ru fio-fio-3.15/Makefile fio-fio-3.15~/Makefile
+--- fio-fio-3.15/Makefile	2019-07-12 09:40:36.000000000 -0700
++++ fio-fio-3.15~/Makefile	2019-07-17 18:04:28.251925871 -0700
+@@ -349,7 +349,7 @@
  mandir = /usr/share/man
  sharedir = /usr/share/fio
  else
