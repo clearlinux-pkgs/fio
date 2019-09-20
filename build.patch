@@ -1,16 +1,16 @@
-diff -ru fio-fio-3.15/configure fio-fio-3.15~/configure
---- fio-fio-3.15/configure	2019-07-12 09:40:36.000000000 -0700
-+++ fio-fio-3.15~/configure	2019-07-17 18:03:44.358103477 -0700
-@@ -149,7 +149,7 @@
- disable_native="no"
+diff -ru fio-fio-3.16/configure fio-fio-3.16~/configure
+--- fio-fio-3.16/configure	2019-09-20 14:08:16.495044219 +0800
++++ fio-fio-3.16~/configure	2019-09-20 14:07:22.347602818 +0800
+@@ -150,7 +150,7 @@
  march_set="no"
  libiscsi="no"
+ libnbd="no"
 -prefix=/usr/local
 +prefix=/usr
  
  # parse options
  for opt do
-@@ -215,7 +215,6 @@
+@@ -218,7 +218,6 @@
    *)
    echo "Bad option $opt"
    show_help="yes"
@@ -18,10 +18,11 @@ diff -ru fio-fio-3.15/configure fio-fio-3.15~/configure
    esac
  done
  
-diff -ru fio-fio-3.15/Makefile fio-fio-3.15~/Makefile
---- fio-fio-3.15/Makefile	2019-07-12 09:40:36.000000000 -0700
-+++ fio-fio-3.15~/Makefile	2019-07-17 18:04:28.251925871 -0700
-@@ -349,7 +349,7 @@
+Binary files fio-fio-3.16/.git/index and fio-fio-3.16~/.git/index differ
+diff -ru fio-fio-3.16/Makefile fio-fio-3.16~/Makefile
+--- fio-fio-3.16/Makefile	2019-09-20 14:08:16.495044219 +0800
++++ fio-fio-3.16~/Makefile	2019-09-20 14:07:22.347602818 +0800
+@@ -355,7 +355,7 @@
  mandir = /usr/share/man
  sharedir = /usr/share/fio
  else
@@ -29,4 +30,3 @@ diff -ru fio-fio-3.15/Makefile fio-fio-3.15~/Makefile
 +mandir = $(prefix)/share/man
  sharedir = $(prefix)/share/fio
  endif
- 
