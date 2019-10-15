@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.16
-Release  : 43
+Release  : 44
 URL      : https://github.com/axboe/fio/archive/fio-3.16/fio-3.16.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.16/fio-3.16.tar.gz
 Summary  : No detailed summary available
@@ -20,6 +20,7 @@ BuildRequires : libaio-dev
 BuildRequires : numactl-dev
 BuildRequires : zlib-dev
 Patch1: build.patch
+Patch2: 0001-python-2-to-3-conversion.patch
 
 %description
 Overview and history
@@ -76,13 +77,14 @@ man components for the fio package.
 %prep
 %setup -q -n fio-fio-3.16
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568959928
+export SOURCE_DATE_EPOCH=1571158972
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -96,11 +98,11 @@ export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -f
 make  %{?_smp_mflags}  V=1
 
 %install
-export SOURCE_DATE_EPOCH=1568959928
+export SOURCE_DATE_EPOCH=1571158972
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fio
-cp COPYING %{buildroot}/usr/share/package-licenses/fio/COPYING
-cp MORAL-LICENSE %{buildroot}/usr/share/package-licenses/fio/MORAL-LICENSE
+cp %{_builddir}/fio-fio-3.16/COPYING %{buildroot}/usr/share/package-licenses/fio/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/fio-fio-3.16/MORAL-LICENSE %{buildroot}/usr/share/package-licenses/fio/ffb3881ef6e7ef966b9fce711e1596d92a0e1e58
 %make_install
 
 %files
@@ -131,8 +133,8 @@ cp MORAL-LICENSE %{buildroot}/usr/share/package-licenses/fio/MORAL-LICENSE
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/fio/COPYING
-/usr/share/package-licenses/fio/MORAL-LICENSE
+/usr/share/package-licenses/fio/4cc77b90af91e615a64ae04893fdffa7939db84c
+/usr/share/package-licenses/fio/ffb3881ef6e7ef966b9fce711e1596d92a0e1e58
 
 %files man
 %defattr(0644,root,root,0755)
