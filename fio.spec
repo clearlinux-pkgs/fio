@@ -4,7 +4,7 @@
 #
 Name     : fio
 Version  : 3.16
-Release  : 44
+Release  : 45
 URL      : https://github.com/axboe/fio/archive/fio-3.16/fio-3.16.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.16/fio-3.16.tar.gz
 Summary  : No detailed summary available
