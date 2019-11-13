@@ -1,13 +1,25 @@
-From c3a26f8e75dc47dbfe7ddee4e2a6330380cac6dc Mon Sep 17 00:00:00 2001
+From 391bff8282b78a8302198a292b2c686b75096dd5 Mon Sep 17 00:00:00 2001
 From: William Douglas <william.douglas@intel.com>
 Date: Tue, 15 Oct 2019 10:01:05 -0700
 Subject: [PATCH] python 2 to 3 conversion
 
 ---
+ tools/fio_jsonplus_clat2csv     |  2 +-
  tools/fiologparser.py           |  7 ++++---
  tools/hist/fiologparser_hist.py | 18 +++++++++---------
- 2 files changed, 13 insertions(+), 12 deletions(-)
+ tools/plot/fio2gnuplot          |  2 +-
+ 4 files changed, 15 insertions(+), 14 deletions(-)
 
+diff --git a/tools/fio_jsonplus_clat2csv b/tools/fio_jsonplus_clat2csv
+index 78a007e..c22cd9e 100755
+--- a/tools/fio_jsonplus_clat2csv
++++ b/tools/fio_jsonplus_clat2csv
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2.7
++#!/usr/bin/python
+ # Note: this script is python2 and python3 compatible.
+ #
+ # fio_jsonplus_clat2csv
 diff --git a/tools/fiologparser.py b/tools/fiologparser.py
 index cc29f1c..16fb595 100755
 --- a/tools/fiologparser.py
@@ -107,6 +119,16 @@ index 8910d5f..982b8bf 100755
  
          cp = SafeConfigParser(allow_no_value=True)
          with open(ctx.job_file, 'r') as fp:
+diff --git a/tools/plot/fio2gnuplot b/tools/plot/fio2gnuplot
+index cc4ea4c..9751500 100755
+--- a/tools/plot/fio2gnuplot
++++ b/tools/plot/fio2gnuplot
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2.7
++#!/usr/bin/python
+ # Note: this script is python2 and python3 compatible.
+ #
+ #  Copyright (C) 2013 eNovance SAS <licensing@enovance.com>
 -- 
-2.23.0
+2.24.0
 
