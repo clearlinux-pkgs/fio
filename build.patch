@@ -1,16 +1,16 @@
 diff -ru fio-fio-3.16/configure fio-fio-3.16~/configure
 --- fio-fio-3.16/configure	2019-09-20 14:08:16.495044219 +0800
 +++ fio-fio-3.16~/configure	2019-09-20 14:07:22.347602818 +0800
-@@ -150,7 +150,7 @@
- march_set="no"
+@@ -151,7 +151,7 @@
  libiscsi="no"
  libnbd="no"
+ libaio_uring="no"
 -prefix=/usr/local
 +prefix=/usr
  
  # parse options
  for opt do
-@@ -218,7 +218,6 @@
+@@ -221,7 +221,6 @@
    *)
    echo "Bad option $opt"
    show_help="yes"
@@ -18,7 +18,6 @@ diff -ru fio-fio-3.16/configure fio-fio-3.16~/configure
    esac
  done
  
-Binary files fio-fio-3.16/.git/index and fio-fio-3.16~/.git/index differ
 diff -ru fio-fio-3.16/Makefile fio-fio-3.16~/Makefile
 --- fio-fio-3.16/Makefile	2019-09-20 14:08:16.495044219 +0800
 +++ fio-fio-3.16~/Makefile	2019-09-20 14:07:22.347602818 +0800
