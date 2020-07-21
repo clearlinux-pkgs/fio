@@ -1,10 +1,10 @@
 diff -ru fio-fio-3.16/configure fio-fio-3.16~/configure
 --- fio-fio-3.16/configure	2019-09-20 14:08:16.495044219 +0800
 +++ fio-fio-3.16~/configure	2019-09-20 14:07:22.347602818 +0800
-@@ -151,7 +151,7 @@
- libiscsi="no"
+@@ -152,7 +152,7 @@ libiscsi="no"
  libnbd="no"
  libaio_uring="no"
+ dynamic_engines="no"
 -prefix=/usr/local
 +prefix=/usr
  
