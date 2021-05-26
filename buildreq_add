@@ -1,7 +1,7 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-libaio-dev
-zlib-dev
-numactl-dev
 bison
 flex
+libaio-dev
+numactl-dev
+zlib-dev
