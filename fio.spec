@@ -5,7 +5,7 @@
 #
 Name     : fio
 Version  : 3.35
-Release  : 65
+Release  : 66
 URL      : https://github.com/axboe/fio/archive/fio-3.35/fio-3.35.tar.gz
 Source0  : https://github.com/axboe/fio/archive/fio-3.35/fio-3.35.tar.gz
 Summary  : No detailed summary available
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684937376
+export SOURCE_DATE_EPOCH=1685501830
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -116,7 +116,7 @@ export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 make  %{?_smp_mflags}  V=1
 popd
 %install
-export SOURCE_DATE_EPOCH=1684937376
+export SOURCE_DATE_EPOCH=1685501830
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fio
 cp %{_builddir}/fio-fio-%{version}/COPYING %{buildroot}/usr/share/package-licenses/fio/4cc77b90af91e615a64ae04893fdffa7939db84c || :
